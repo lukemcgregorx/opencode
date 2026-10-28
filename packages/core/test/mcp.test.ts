@@ -2661,8 +2661,8 @@ it.effect("waits for permission before calling an MCP tool", () =>
       .pipe(Effect.forkScoped)
     expect(yield* Deferred.await(assertion)).toEqual({
       action: "demo_search",
-      resources: ["*"],
-      save: ["*"],
+      resources: ["demo_search"],
+      save: ["demo_search"],
       metadata: { input: { query: "open issues" } },
       sessionID: Session.ID.make("ses_mcp_permission"),
       agent: toolIdentity.agent,

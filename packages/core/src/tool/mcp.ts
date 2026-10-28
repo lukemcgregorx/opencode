@@ -57,8 +57,8 @@ export const layer = Layer.effect(
                   Effect.gen(function* () {
                     yield* permission.assert({
                       action: name(tool.server, tool.name),
-                      resources: ["*"],
-                      save: ["*"],
+                      resources: [name(tool.server, tool.name)],
+                      save: [name(tool.server, tool.name)],
                       metadata: { input: input ?? {} },
                       sessionID: context.sessionID,
                       agent: context.agent,
